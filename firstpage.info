@@ -1,0 +1,5 @@
+﻿name = First page
+description = Greeting PAGE an BLOCK for current logged user.
+package = FFW
+core = 7.x
+version = 1.0

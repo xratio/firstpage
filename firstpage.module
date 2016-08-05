@@ -1,0 +1,51 @@
+﻿<?php
+/**
+ * Implements hook_menu().
+ */
+function firstpage_menu() {
+  $items['mypage'] = array(
+    'title' => 'My page',
+	'description' => 'User greeting page',
+    'page callback' => 'firstpage_callback',
+    'menu_name' => 'main-menu',
+	'access callback' => TRUE,
+	'type' => MENU_NORMAL_ITEM,
+   );
+   
+  return $items;
+}
+
+/**
+ * Implements firstpage_callback().
+ */
+function firstpage_callback(){
+  global $user;
+  // Put greeting message in $greeting
+  $greeting = "<h2>Hello " . $user->name . '!</h2>';
+  return $greeting;
+}
+
+/**
+ * Implements firstpage_block_info().
+ */
+function firstpage_block_info() {
+  $blocks['example_uppercase'] = array(
+    'info' => t('Greeting block for logged user'),
+    'status' => TRUE,
+    'region' => 'sidebar_first',
+    );
+
+  return $blocks;
+}
+
+/**
+ * Implements firstpage_block_view().
+ */
+function firstpage_block_view() {
+  global $user;
+  $greeting = "<h4>Hello " . $user->name . '!</h4>';
+  $block = array();
+  $block['subject'] = t('Greeting');
+  $block['content'] = t($greeting);
+  return $block;
+}
