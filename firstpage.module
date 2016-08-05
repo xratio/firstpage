@@ -49,3 +49,5 @@ function firstpage_block_view() {
   $block['content'] = t($greeting);
   return $block;
 }
+
+/**/
