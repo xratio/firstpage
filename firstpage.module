@@ -7,8 +7,9 @@ function firstpage_menu() {
     'title' => 'My page',
 	'description' => 'User greeting page',
     'page callback' => 'firstpage_callback',
+	'access callback' => 'user_is_logged_in',
     'menu_name' => 'main-menu',
-	'access callback' => TRUE,
+	//'access callback' => TRUE, 
 	'type' => MENU_NORMAL_ITEM,
    );
    
@@ -43,6 +44,7 @@ function firstpage_block_info() {
  */
 function firstpage_block_view() {
   global $user;
+  // Put greeting message in $greeting
   $greeting = "<h4>Hello " . $user->name . '!</h4>';
   $block = array();
   $block['subject'] = t('Greeting');
