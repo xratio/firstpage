@@ -9,7 +9,6 @@ function firstpage_menu() {
     'page callback' => 'firstpage_callback',
 	'access callback' => 'user_is_logged_in',
     'menu_name' => 'main-menu',
-	//'access callback' => TRUE, 
 	'type' => MENU_NORMAL_ITEM,
    );
    
