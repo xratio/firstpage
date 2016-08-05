@@ -5,11 +5,11 @@
 function firstpage_menu() {
   $items['mypage'] = array(
     'title' => 'My page',
-	'description' => 'User greeting page',
+    'description' => 'User greeting page',
     'page callback' => 'firstpage_callback',
-	'access callback' => 'user_is_logged_in',
+    'access callback' => 'user_is_logged_in',
     'menu_name' => 'main-menu',
-	'type' => MENU_NORMAL_ITEM,
+    'type' => MENU_NORMAL_ITEM,
    );
    
   return $items;
